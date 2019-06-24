@@ -14,16 +14,16 @@ public class CalculatorTest {
 
     @Test
     public void testSubs() {
-        assertEquals(5, calculator.operation(2, 3, "subs"));
+        assertEquals(1, calculator.operation(3, 2, "subs"));
     }
 
     @Test
     public void testMult() {
-        assertEquals(5, calculator.operation(2, 3, "mult"));
+        assertEquals(6, calculator.operation(2, 3, "mult"));
     }
 
     @Test
     public void testDiv() {
-        assertEquals(5, calculator.operation(2, 3, "div"));
+        assertEquals(3, calculator.operation(6, 2, "div"));
     }
 }
