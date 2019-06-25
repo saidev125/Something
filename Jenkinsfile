@@ -8,8 +8,16 @@ pipeline {
           }
           stage("Unit test") {
                steps {
-                    sh "./gradlew test"
+                    sh "./gradlew test"                   
                }
+          }
+          stage("Jacoco") {
+               step([$class: 'JacocoPublisher', 
+                execPattern: 'target/*.exec',
+                classPattern: 'target/classes',
+                sourcePattern: 'src/main/java',
+                exclusionPattern: 'src/test*'
+                ])    
           }
       }
 }
