@@ -3,8 +3,7 @@ pipeline {
      stages {
           stage("Build") {
                steps {
-                    sh "./gradlew compileJava"  
-                    step( [ $class: 'JacocoPublisher' ] )                                      
+                    sh "./gradlew compileJava"                                                        
                }
           }
           stage("Unit test") {
